@@ -9,7 +9,7 @@ class IGNSpider(scrapy.Spider):
     def start_requests(self):
         urls = []
         base = "http://www.ign.com/games/reviews-ajax?startIndex=%d"
-        for index in range(1, 2):
+        for index in range(1, 4976):
             urls.append(base % index)
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
